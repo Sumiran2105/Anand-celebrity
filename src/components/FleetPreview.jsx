@@ -5,22 +5,22 @@ import { motion } from "framer-motion";
 const previewData = [
   {
     type: "Luxury Car",
-    image: "public/data/assets/benz 7 series.jpg",
+    image: "data/assets/benz-7series.jpg",
     desc: "Elite luxury sedan for VIP movement.",
   },
   {
     type: "5-Star Hotel",
-    image: "public/data/assets/Falaknuma Palace.jpeg",
+    image: "data/assets/Falaknuma-Palace.jpeg",
     desc: "Royal accommodation with private entry.",
   },
   {
     type: "Security Team",
-    image: "public/data/assets/security.jpeg",
+    image: "data/assets/security.jpeg",
     desc: "Trained personal security officer for protection.",
   },
   {
     type: "Chauffeur",
-    image: "public/data/assets/driver.jpeg",
+    image: "data/assets/driver.jpeg",
     desc: "Experienced VIP chauffeur with etiquette expertise.",
   },
 ];
