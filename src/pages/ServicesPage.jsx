@@ -8,6 +8,8 @@ import {
   FiStar,
   FiPhoneCall,
   FiGlobe,
+  FiEye,
+  FiCheckCircle,
 } from "react-icons/fi";
 
 import ServiceModal from "../components/ServiceModal";
@@ -15,6 +17,9 @@ import ServiceModal from "../components/ServiceModal";
 export default function Services() {
   const [selectedService, setSelectedService] = useState(null);
 
+  // ================================
+  // SERVICES LIST
+  // ================================
   const services = [
     {
       icon: <FiTruck size={30} />,
@@ -74,10 +79,49 @@ export default function Services() {
     },
   ];
 
+  // ================================
+  // PROCESS STEPS
+  // ================================
+  const process = [
+    {
+      icon: <FiEye size={28} />,
+      title: "Confidential Profile Assessment",
+      desc: "We study your movement purpose, privacy sensitivity, and required protocol levels to plan a tailored VIP strategy.",
+    },
+    {
+      icon: <FiShield size={28} />,
+      title: "Risk & Requirement Analysis",
+      desc: "Our protection team identifies media zones, public hotspots, alternate routes, and risk points.",
+    },
+    {
+      icon: <FiUsers size={28} />,
+      title: "Specialized Team Allocation",
+      desc: "We assign chauffeurs, PSOs, bouncers, handlers, and coordinators based on your requirement.",
+    },
+    {
+      icon: <FiMap size={28} />,
+      title: "Multi-Route Blueprinting",
+      desc: "Primary, secondary, diversion, and emergency extraction routes are prepared and briefed.",
+    },
+    {
+      icon: <FiCheckCircle size={28} />,
+      title: "On-Ground Execution",
+      desc: "Coordination between cars, handlers, and security ensures precision movement without interruption.",
+    },
+    {
+      icon: <FiPhoneCall size={28} />,
+      title: "End-of-Day Review",
+      desc: "A complete movement summary and next-day plan are shared with PA/manager.",
+    },
+  ];
+
   return (
     <section className="bg-white py-20 md:py-24">
       <div className="container mx-auto px-4">
 
+        {/* ============================ */}
+        {/* SECTION TITLE */}
+        {/* ============================ */}
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r 
           from-blue-700 via-indigo-500 to-orange-500 bg-clip-text text-transparent 
@@ -89,35 +133,37 @@ export default function Services() {
           </p>
         </div>
 
+        {/* ============================ */}
+        {/* SERVICES GRID */}
+        {/* ============================ */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
               onClick={() => setSelectedService(service)}
-               className="
-    p-7 
-    rounded-2xl
-    border 
-    border-gray-200
-    bg-white
-    shadow-md 
-    hover:shadow-xl
-    transition-all 
-    duration-300
-    hover:-translate-y-2
-    cursor-pointer
-  "
->
-            
-              <div className="w-14 h-14 rounded-xl bg-blue-50 group-hover:bg-white/20 flex items-center justify-center">
+              className="
+                p-7 
+                rounded-2xl
+                border 
+                border-gray-200
+                bg-white
+                shadow-md 
+                hover:shadow-xl
+                transition-all 
+                duration-300
+                hover:-translate-y-2
+                cursor-pointer
+              "
+            >
+              <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
                 {service.icon}
               </div>
 
-              <h3 className="text-xl font-bold text-blue-900 mt-5 group-hover:text-white">
+              <h3 className="text-xl font-bold text-blue-900 mt-5">
                 {service.title}
               </h3>
 
-              <p className="text-gray-600 group-hover:text-blue-100 mt-3 text-sm">
+              <p className="text-gray-600 mt-3 text-sm">
                 {service.desc}
               </p>
 
@@ -125,6 +171,53 @@ export default function Services() {
             </div>
           ))}
         </div>
+
+        {/* ======================================= */}
+        {/*      NEW PREMIUM PROCESS SECTION        */}
+        {/* ======================================= */}
+
+        <div className="mt-24">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center
+            bg-gradient-to-r from-blue-700 via-indigo-500 to-orange-500 
+            bg-clip-text text-transparent drop-shadow-lg">
+            Our Premium Process
+          </h2>
+
+          <p className="text-center text-gray-600 max-w-2xl mx-auto mt-3 text-lg">
+            Ultra-secure, confidential, and precision-driven workflow for VIP movement.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
+
+            {process.map((step, index) => (
+              <div
+                key={index}
+                className="p-8 border bg-white rounded-2xl shadow-md hover:shadow-xl 
+                transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
+                  {step.icon}
+                </div>
+
+                <h3 className="text-xl font-bold text-blue-900 mt-4">
+                  {step.title}
+                </h3>
+
+                <p className="text-gray-600 mt-3 text-sm leading-relaxed">
+                  {step.desc}
+                </p>
+
+                <div className="mt-6">
+                  <span className="text-sm font-semibold text-orange-600">
+                    Step {index + 1}
+                  </span>
+                </div>
+              </div>
+            ))}
+
+          </div>
+        </div>
+
       </div>
 
       {/* MODAL */}
