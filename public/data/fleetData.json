@@ -3,7 +3,7 @@
     {
       "name": "Mercedes S-Class",
       "category": "Luxury Sedan",
-      "image": "data/assets/benz-7series.jpg",
+      "image": "/data/assets/benz-7series.jpg",
       "type": "sedan"
     },
     {
@@ -15,25 +15,25 @@
     {
       "name": "Toyota Vellfire",
       "category": "MPV",
-      "image": "data/assets/vellfiretoyotavellfirefrontview.png",
+      "image": "/data/assets/vellfiretoyotavellfirefrontview.png",
       "type": "mpv"
     },
     {
       "name": "Range Rover Vogue",
       "category": "Luxury SUV",
-      "image": "data/assets/ranger-rover.png",
+      "image": "/data/assets/ranger-rover.png",
       "type": "suv"
     },
     {
       "name": "Audi Q7",
       "category": "Luxury SUV",
-      "image": "data/assets/q7.png",
+      "image": "/data/assets/q7.png",
       "type": "suv"
     },
     {
       "name": "Mercedes V-Class",
       "category": "VIP Van",
-      "image": "data/assets/v-class.png",
+      "image": "/data/assets/v-class.png",
       "type": "mpv"
     }
   ],
@@ -51,7 +51,7 @@
       "desc": "Backdoor entry, controlled staff exposure, and identity privacy.",
       "type": "info",
       "city": "multiple",
-      "image": "data/assets/check-in .jpeg"
+      "image": "/data/assets/check-in.jpeg"
     },
     {
       "title": "VIP Suite Management",
@@ -65,35 +65,35 @@
       "title": "Taj Falaknuma Palace",
       "city": "Hyderabad",
       "type": "5star",
-      "image": "data/assets/Falaknuma-Palace.jpeg",
+      "image": "/data/assets/Falaknuma-Palace.jpeg",
       "desc": "A royal palace hotel offering unmatched privacy and luxury."
     },
     {
       "title": "ITC Kohenur",
       "city": "Hyderabad",
       "type": "5star",
-      "image": "data/assets/ITC-Kohenur.jpeg",
+      "image": "/data/assets/ITC-Kohenur.jpeg",
       "desc": "Premium 5-star luxury hotel with secure access."
     },
     {
       "title": "Park Hyatt",
       "city": "Hyderabad",
       "type": "5star",
-      "image": "data/assets/Luxury5-Star.jpeg",
+      "image": "/data/assets/Luxury5-Star.jpeg",
       "desc": "Celebrity-favorite luxury stay with private dining."
     },
     {
       "title": "Ritz Carlton",
       "city": "Bangalore",
       "type": "5star",
-      "image": "data/assets/TheRitz-Carlton.jpeg",
+      "image": "/data/assets/TheRitz-Carlton.jpeg",
       "desc": "World-class luxury suites with elite service."
     },
     {
       "title": "Taj Krishna",
       "city": "Hyderabad",
       "type": "5star",
-      "image": "data/assets/thepalace.jpeg",
+      "image": "/data/assets/thepalace.jpeg",
       "desc": "Iconic VIP luxury hotel with controlled entry points."
     }
   ],
@@ -102,25 +102,25 @@
     {
       "name": "Armed Gunmen",
       "type": "gunmen",
-      "image": "data/assets/gunmen.jpeg",
+      "image": "/data/assets/gunmen.jpeg",
       "desc": "Highly trained armed security personnel for high-risk assignments."
     },
     {
       "name": "Bouncers",
       "type": "bouncer",
-      "image": "data/assets/bouncer.jpeg",
+      "image": "/data/assets/bouncer.jpeg",
       "desc": "Strong, experienced bouncers for event and crowd security."
     },
     {
       "name": "PSO (Personal Security Officer)",
       "type": "pso",
-      "image": "data/assets/security.jpeg",
+      "image": "/data/assets/security.jpeg",
       "desc": "Elite personal protection officers trained for VIP escort duties."
     },
     {
       "name": "Escort Vehicles Team",
       "type": "escort",
-      "image": "data/assets/escort.jpg",
+      "image": "/data/assets/escort.jpg",
       "desc": "Support security vehicles for convoy protection."
     }
   ]

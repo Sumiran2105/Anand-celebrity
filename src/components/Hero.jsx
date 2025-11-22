@@ -67,7 +67,7 @@ export default function Hero() {
           >
             <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200">
               <img
-                src="data/assets/celebrity .jpeg"
+                src="/data/assets/celebrity.jpeg"
                 alt="Luxury VIP Cars"
                 className="object-cover w-full h-64 md:h-96 lg:h-[28rem]"
               />
