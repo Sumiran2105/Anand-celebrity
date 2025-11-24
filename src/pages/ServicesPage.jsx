@@ -1,24 +1,20 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
-import {
-  FiShield,
-  FiTruck,
-  FiHome,
-  FiUsers,
-  FiMap,
-  FiStar,
-  FiPhoneCall,
-  FiGlobe,
-  FiEye,
-  FiCheckCircle,
-} from "react-icons/fi";
-
 import ServiceModal from "../components/ServiceModal";
 
-// -----------------------------------------------
-// ANIMATION VARIANTS (STAGGERED ICON ENTRY)
-// -----------------------------------------------
+// ICONS FOR PROCESS SECTION
+import {
+  FiEye,
+  FiShield,
+  FiUsers,
+  FiMap,
+  FiCheckCircle,
+  FiPhoneCall,
+} from "react-icons/fi";
+
+// --------------------------------------------------
+// ANIMATION VARIANTS
+// --------------------------------------------------
 const iconVariant = {
   hidden: { opacity: 0, scale: 0.4, y: 30 },
   visible: (i) => ({
@@ -33,20 +29,18 @@ const iconVariant = {
   }),
 };
 
-// -----------------------------------------------
-// ICON BOX COMPONENT (Pulse + Shine)
-// -----------------------------------------------
-function IconBox({ children, colorClass }) {
+// --------------------------------------------------
+// ICON BOX (for PROCESS steps)
+// --------------------------------------------------
+function IconBox({ children }) {
   return (
     <div
-      className={`
-        w-16 h-16 rounded-2xl flex items-center justify-center
-        bg-gradient-to-br ${colorClass}
-        shadow-lg border border-white/50
-        transition-all duration-300
-        hover:scale-110 hover:shadow-2xl
-        icon-pulse icon-shine
-      `}
+      className="
+        w-16 h-16 rounded-2xl flex items-center justify-center 
+        bg-gradient-to-br from-yellow-100 to-yellow-300
+        text-yellow-700 shadow-yellow-400 border border-yellow-200
+        shadow-lg
+      "
     >
       {children}
     </div>
@@ -56,135 +50,123 @@ function IconBox({ children, colorClass }) {
 export default function Services() {
   const [selectedService, setSelectedService] = useState(null);
 
-  // -----------------------------------------------
-  // PREMIUM COLOR PALETTES FOR ICONS
-  // -----------------------------------------------
-  const iconStyles = [
-    "from-blue-100 to-blue-300 text-blue-700 shadow-blue-300",
-    "from-purple-100 to-purple-300 text-purple-700 shadow-purple-300",
-    "from-amber-100 to-amber-300 text-amber-700 shadow-amber-300",
-    "from-emerald-100 to-emerald-300 text-emerald-700 shadow-emerald-300",
-    "from-red-100 to-red-300 text-red-700 shadow-red-300",
-    "from-indigo-100 to-indigo-300 text-indigo-700 shadow-indigo-300",
-    "from-rose-100 to-rose-300 text-rose-700 shadow-rose-300",
-    "from-cyan-100 to-cyan-300 text-cyan-700 shadow-cyan-300",
-  ];
-
-  // -----------------------------------------------
-  // SERVICE CARDS (FULL UPDATED WITH FEATURES)
-  // -----------------------------------------------
+  // --------------------------------------------------
+  // 8 PREMIUM SERVICES (WITH IMAGE PATHS)
+  // --------------------------------------------------
   const services = [
     {
-      icon: <FiTruck size={30} />,
+      img: "/src/assets/luxury.jpg",
       title: "Luxury Cars & Chauffeurs",
       desc: "Premium sedans, SUVs, and luxury vans.",
       fullDesc:
-        "We provide premium luxury vehicles such as Mercedes, BMW, Audi, Range Rover, and Vellfire with trained VIP chauffeurs who maintain full discretion and protocol discipline.",
-      features: [
-        "Mercedes, BMW, Audi & Range Rover fleet",
-        "Protocol-trained chauffeurs",
-        "Discreet pickup & drop handling",
-        "Shock-free smooth driving style",
-        "Real-time backend movement monitoring",
-      ],
+        "We provide premium luxury vehicles such as Mercedes, BMW, Audi, Range Rover, and Vellfire with trained VIP chauffeurs.",
+        features: [
+      "Mercedes, BMW, Audi & Range Rover fleet",
+      "Protocol-trained chauffeurs",
+      "Discreet pickup & drop handling",
+      "Smooth, shock-free driving",
+      "Backend movement monitoring"
+    ]
     },
     {
-      icon: <FiShield size={30} />,
+      img: "/src/assets/security.jpg",
       title: "Elite Security Personnel",
       desc: "Gunmen, bouncers, and PSOs.",
       fullDesc:
-        "Our close-protection officers include licensed gunmen, bouncers, PSOs, and high-level security experts trained for VIP escorting and crisis handling.",
-      features: [
-        "Licensed gunmen & elite bouncers",
-        "Threat-level risk assessment",
-        "VIP escorting & crowd control",
-        "Media-zone protection",
-        "24/7 protective intelligence support",
-      ],
+        "Our close-protection officers include licensed gunmen, bouncers, and PSOs trained for high-profile client safety.",
+        features: [
+      "Licensed gunmen & bouncers",
+      "Threat-level risk assessment",
+      "VIP escorting & crowd control",
+      "Media-zone protection",
+      "24/7 protective intelligence support"
+    ]
     },
     {
-      icon: <FiHome size={30} />,
+      img: "/src/assets/hotel.jpg",
       title: "Private Hotel Arrangements",
       desc: "VIP rooms with total discretion.",
       fullDesc:
-        "We arrange private entry, secure floors, pre-screened staff, and high confidentiality check-in for celebrity clients.",
-      features: [
-        "Silent check-ins without registration counters",
-        "Dedicated floor access for increased privacy",
-        "Pre-screened housekeeping team",
-        "VIP concierge & secure passage",
-      ],
+        "We arrange private entry, secure floors, pre-screened staff, and confidential check-ins for celebrities.",
+        features: [
+      "Silent check-ins without lobby exposure",
+      "Dedicated secure floors",
+      "Pre-screened housekeeping staff",
+      "VIP concierge service"
+    ]
+        
     },
     {
-      icon: <FiUsers size={30} />,
+      img: "/src/assets/backend.jpg",
       title: "Backend Coordination",
       desc: "Movement + event logistics.",
       fullDesc:
-        "Our backstage coordination includes vehicle timing, route clearance, stage/entry planning, and emergency handling.",
-      features: [
-        "Chauffeur & security sync-up",
-        "Event backstage control",
-        "Live route monitoring",
-        "Emergency re-routing",
-      ],
+        "Includes chauffeur coordination, emergency re-routing, backstage handling, and live route monitoring.",
+        features: [
+      "Coordination between chauffeurs & PSOs",
+      "Backstage media handling",
+      "Live route monitoring",
+      "Emergency route switching"
+    ]
     },
     {
-      icon: <FiMap size={30} />,
+      img: "/src/assets/map.jpg",
       title: "Pan-India VIP Movement",
       desc: "Nationwide travel management.",
       fullDesc:
-        "Seamless statewide and interstate movement with optimized, risk-free routing and scheduling.",
-      features: [
-        "Airport-Floor to venue-Floor movements",
-        "Statewide protocol-based transfers",
-        "Secure route blueprinting",
-        "Priority traffic management",
-      ],
+        "Seamless interstate VIP movement with high-level routing, scheduling, and crowd-avoidance planning.",
+        features: [
+      "Airport–hotel–venue movement",
+      "Protocol-based interstate transfers",
+      "Route blueprint with backups",
+      "Traffic and crowd avoidance planning"
+    ]
     },
     {
-      icon: <FiStar size={30} />,
+      img: "/src/assets/redcarpet.jpeg",
       title: "Red-Carpet Assistance",
       desc: "Media & backstage control.",
       fullDesc:
-        "We ensure a smooth red-carpet appearance with media spacing, crowd control, and camera pathway management.",
-      features: [
-        "Camera & media lane formation",
-        "Zero-crowd contact strategy",
-        "On-stage & backstage escorting",
-        "Fan/crowd pressure management",
-      ],
+        "We handle media spacing, camera pathways, backstage escorting, and fan/crowd pressure control.",
+        features: [
+      "Press & media lane setup",
+      "Fan/crowd pressure handling",
+      "Backstage escorting",
+      "Stage entry coordination"
+    ]
+        
     },
     {
-      icon: <FiPhoneCall size={30} />,
+      img: "/src/assets/support.jpg",
       title: "24/7 Dedicated Support",
       desc: "Instant priority help.",
       fullDesc:
-        "A priority hotline for celebrity managers ensuring immediate support for all urgent situations.",
-      features: [
-        "Instant issue resolution",
-        "Night-shift VIP handlers",
-        "Emergency movement planning",
-        "Last-minute booking support",
-      ],
+        "Immediate assistance for urgent requests — including night-shift handlers, emergency planning, and last-minute routing.",
+       features: [
+      "Night-shift VIP handlers",
+      "Instant emergency response",
+      "Priority hotline",
+      "Last-minute route planning"
+    ]
     },
     {
-      icon: <FiGlobe size={30} />,
+      img: "/src/assets/international.jpg",
       title: "International Coordination",
       desc: "Worldwide movement.",
       fullDesc:
-        "Global VIP support including airport arrivals, immigration handling, hotel booking, and international chauffeur/security.",
-      features: [
-        "Immigration arrival assistance",
-        "VIP hotel & travel bookings",
-        "International chauffeur support",
-        "Worldwide movement coordination",
-      ],
+        "Worldwide VIP support: immigration coordination, hotel booking, international chauffeurs & itinerary planning.",
+        features: [
+      "Airport immigration support",
+      "VIP travel bookings",
+      "International chauffeurs",
+      "Global itinerary handling"
+    ]
     },
   ];
 
-  // -----------------------------------------------
-  // PROCESS STEPS
-  // -----------------------------------------------
+  // --------------------------------------------------
+  // PREMIUM PROCESS STEPS
+  // --------------------------------------------------
   const process = [
     {
       icon: <FiEye size={28} />,
@@ -209,7 +191,7 @@ export default function Services() {
     {
       icon: <FiCheckCircle size={28} />,
       title: "On-Ground Execution",
-      desc: "Smooth, secure, and coordinated VIP movement.",
+      desc: "Smooth, secure VIP movement.",
     },
     {
       icon: <FiPhoneCall size={28} />,
@@ -219,7 +201,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="bg-white py-18 md:py-20">
+    <section className="bg-white py-20 md:py-24">
       <div className="container mx-auto px-4">
 
         {/* TITLE */}
@@ -232,36 +214,47 @@ export default function Services() {
           </p>
         </div>
 
+        {/* --------------------------------------------------
+             SERVICE CARDS (8 CARDS)
+        -------------------------------------------------- */}
         {/* SERVICES GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              onClick={() => setSelectedService(service)}
-              className="p-7 rounded-2xl bg-white border border-gray-200 shadow-md
-              hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
-            >
-              <motion.div
-                custom={index}
-                variants={iconVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                <IconBox colorClass={iconStyles[index]}>
-                  {service.icon}
-                </IconBox>
-              </motion.div>
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+  {services.map((service, index) => (
+    <div
+      key={index}
+      onClick={() => setSelectedService(service)}
+      className="
+        rounded-3xl overflow-hidden bg-white shadow-lg 
+        hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer
+      "
+    >
+      {/* IMAGE FILLING THE TOP */}
+      <div className="h-52 w-full overflow-hidden">
+        <img
+          src={service.img}
+          alt={service.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-              <h3 className="text-xl font-bold text-blue-900 mt-5">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 mt-3 text-sm">{service.desc}</p>
-            </div>
-          ))}
-        </div>
+      {/* CONTENT BLOCK */}
+      <div className="p-6 text-center">
+        <h3 className="text-xl font-bold text-blue-600 tracking-wide">
+          {service.title}
+        </h3>
 
-        {/* PROCESS SECTION */}
+        <p className="text-gray-600 mt-3 text-sm leading-relaxed">
+          {service.desc}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
+
+
+        {/* --------------------------------------------------
+              PROCESS STEPS
+        -------------------------------------------------- */}
         <div className="mt-24">
           <h2 className="text-3xl md:text-4xl font-extrabold text-center text-blue-900">
             Our Premium Process
@@ -285,15 +278,7 @@ export default function Services() {
                   whileInView="visible"
                   viewport={{ once: true }}
                 >
-                  <IconBox
-                    colorClass="
-                      from-yellow-100 to-yellow-300
-                      text-yellow-700 shadow-yellow-400
-                      border-yellow-200
-                    "
-                  >
-                    {step.icon}
-                  </IconBox>
+                  <IconBox>{step.icon}</IconBox>
                 </motion.div>
 
                 <h3 className="text-xl font-bold text-blue-900 mt-4">
@@ -313,7 +298,6 @@ export default function Services() {
             ))}
           </div>
         </div>
-
       </div>
 
       {/* MODAL */}
