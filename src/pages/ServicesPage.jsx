@@ -55,7 +55,7 @@ export default function Services() {
   // --------------------------------------------------
   const services = [
     {
-      img: "public/data/assets/assets/luxury.jpg",
+      img: "/data/assets/assets/luxury.jpg",
       title: "Luxury Cars & Chauffeurs",
       desc: "Premium sedans, SUVs, and luxury vans.",
       fullDesc:
@@ -69,7 +69,7 @@ export default function Services() {
     ]
     },
     {
-      img: "public/data/assets/assets/security.jpg",
+      img: "/data/assets/assets/security.jpg",
       title: "Elite Security Personnel",
       desc: "Gunmen, bouncers, and PSOs.",
       fullDesc:
@@ -83,7 +83,7 @@ export default function Services() {
     ]
     },
     {
-      img: "public/data/assets/assets/hotel.jpg",
+      img: "/data/assets/assets/hotel.jpg",
       title: "Private Hotel Arrangements",
       desc: "VIP rooms with total discretion.",
       fullDesc:
@@ -97,7 +97,7 @@ export default function Services() {
         
     },
     {
-      img: "public/data/assets/assets/backend.jpg",
+      img: "/data/assets/assets/backend.jpg",
       title: "Backend Coordination",
       desc: "Movement + event logistics.",
       fullDesc:
@@ -110,7 +110,7 @@ export default function Services() {
     ]
     },
     {
-      img: "public/data/assets/assets/map.jpg",
+      img: "/data/assets/assets/map.jpg",
       title: "Pan-India VIP Movement",
       desc: "Nationwide travel management.",
       fullDesc:
@@ -123,7 +123,7 @@ export default function Services() {
     ]
     },
     {
-      img: "public/data/assets/assets/redcarpet.jpeg",
+      img: "/data/assets/assets/redcarpet.jpeg",
       title: "Red-Carpet Assistance",
       desc: "Media & backstage control.",
       fullDesc:
@@ -137,7 +137,7 @@ export default function Services() {
         
     },
     {
-      img: "public/data/assets/assets/support.jpg",
+      img: "/data/assets/assets/support.jpg",
       title: "24/7 Dedicated Support",
       desc: "Instant priority help.",
       fullDesc:
@@ -150,7 +150,7 @@ export default function Services() {
     ]
     },
     {
-      img: "public/data/assets/international.jpg",
+      img: "/data/assets/assets/international.jpg",
       title: "International Coordination",
       desc: "Worldwide movement.",
       fullDesc:
