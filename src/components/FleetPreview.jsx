@@ -85,7 +85,7 @@ export default function FleetPreview() {
             href="/fleet"
             className="
               inline-block px-8 py-3 rounded-full font-semibold
-              bg-orange-500 text-white
+              bg-blue-500 text-white
               hover:from-blue-700 hover:to-blue-900 shadow-lg hover:shadow-xl 
               transition-all duration-300
             "

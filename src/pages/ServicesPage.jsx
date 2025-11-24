@@ -175,9 +175,7 @@ export default function Services() {
         {/* ======================================= */}
 
         <div className="mt-24">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center
-            bg-gradient-to-r from-blue-700 via-indigo-500 to-orange-500 
-            bg-clip-text text-transparent drop-shadow-lg">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-blue-900">
             Our Premium Process
           </h2>
 
