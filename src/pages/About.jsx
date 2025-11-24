@@ -4,21 +4,48 @@ export default function About() {
   return (
     <div className="pt-18">
 
-      {/* =======================
+      {/* ============================
+          0. PREMIUM INTRO HERO SECTION
+      ============================ */}
+   {/* ROYAL BLUE LUXURY HERO – UPGRADED */}
+<section className="bg-gradient-to-b from-[#0A1A39] via-[#0F2554] to-[#163B72] py-28 px-6 text-white relative overflow-hidden">
+
+  {/* Subtle Glow Circles */}
+  <div className="absolute top-10 left-10 w-40 h-40 bg-blue-400/20 rounded-full blur-3xl"></div>
+  <div className="absolute bottom-20 right-20 w-48 h-48 bg-indigo-500/20 rounded-full blur-3xl"></div>
+
+  <div className="relative max-w-5xl mx-auto text-center">
+    <h1 className="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)]">
+      India’s Premier Celebrity Movement Network
+    </h1>
+
+    <p className="mt-6 text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+      Experience flawless coordination, protected travel, and discreet luxury movement for
+      India’s most respected personalities — delivered with unmatched professionalism.
+    </p>
+
+    <p className="mt-5 text-blue-200 max-w-2xl mx-auto text-lg leading-relaxed">
+      Our elite backend team, vetted chauffeurs, and secured hospitality network ensure 
+      every movement is smooth, confidential, and perfectly planned.
+    </p>
+  </div>
+</section>
+
+
+
+      {/* ============================
           1. ABOUT ANAND CELEBRITY SERVICE
-      ========================== */}
+      ============================ */}
       <section className="max-w-7xl mx-auto px-5 pt-32 mb-16">
 
         {/* Title */}
-        <h1
-          className="text-3xl md:text-4xl font-extrabold text-center text-blue-900"
-        >
+        <h1 className="text-3xl md:text-4xl font-extrabold text-center text-blue-900">
           Anand Celebrity Service
         </h1>
 
         <div className="grid md:grid-cols-2 gap-12 mt-14">
 
-          {/* Image */}
+          {/* IMAGE */}
           <div className="flex justify-center">
             <img
               src="data/assets/founder.jpg"
@@ -27,41 +54,42 @@ export default function About() {
             />
           </div>
 
+          {/* DESCRIPTION */}
           <div className="flex flex-col justify-center space-y-6">
 
-  <p className="text-[1.15rem] text-gray-800 leading-relaxed bg-white/80 p-4 rounded-lg border-l-4 border-blue-700 shadow-sm">
-    Anand Celebrity Service stands as India’s most trusted and distinguished
-    luxury movement brand — built exclusively for celebrities, influencers,
-    public personalities, and high-profile professionals who expect nothing
-    less than <span className="font-semibold text-blue-700">precision, privacy, and five-star comfort</span>.
-  </p>
+            <p className="text-[1.15rem] text-gray-800 leading-relaxed bg-white/80 p-4 rounded-lg border-l-4 border-blue-700 shadow-sm">
+              Anand Celebrity Service stands as India’s most trusted and distinguished
+              luxury movement brand — built exclusively for celebrities, influencers,
+              public personalities, and high-profile professionals who expect nothing
+              less than <span className="font-semibold text-blue-700">precision, privacy, and five-star comfort</span>.
+            </p>
 
-  <p className="text-[1.15rem] text-gray-700 leading-relaxed bg-white/70 p-4 rounded-lg border-l-4 border-orange-500 shadow-sm">
-    From film shoots to nationwide tours and spiritual retreats, every movement is
-    handled with <span className="font-semibold text-orange-600">elite-level security, seamless coordination,
-    and complete confidentiality</span>.
-  </p>
+            <p className="text-[1.15rem] text-gray-700 leading-relaxed bg-white/70 p-4 rounded-lg border-l-4 border-orange-500 shadow-sm">
+              From film shoots to nationwide tours and spiritual retreats, every movement is
+              handled with <span className="font-semibold text-orange-600">elite-level security, seamless coordination,
+              and complete confidentiality</span>.
+            </p>
 
-  <p className="text-[1.15rem] text-gray-700 leading-relaxed bg-white/70 p-4 rounded-lg shadow-sm rounded-lg">
-    Each assignment is supported by a trained backend network — expert chauffeurs,
-    luxury fleet partners, operations managers, and premium stay tie-ups —
-    ensuring unmatched professionalism.
-  </p>
+            <p className="text-[1.15rem] text-gray-700 leading-relaxed bg-white/70 p-4 rounded-lg shadow-sm">
+              Each assignment is supported by a trained backend network — expert chauffeurs,
+              luxury fleet partners, operations managers, and premium stay tie-ups —
+              ensuring unmatched professionalism.
+            </p>
 
-  <p className="text-[1.15rem] text-gray-700 leading-relaxed bg-white/70 p-4 rounded-lg shadow-sm">
-    Whether it's discreet event movement or multi-city VIP routes, we operate with one
-    principle: <span className="font-semibold text-blue-700">your comfort and privacy come first</span>.
-  </p>
+            <p className="text-[1.15rem] text-gray-700 leading-relaxed bg-white/70 p-4 rounded-lg shadow-sm">
+              Whether it's discreet event movement or multi-city VIP routes, we operate with one
+              principle: <span className="font-semibold text-blue-700">your comfort and privacy come first</span>.
+            </p>
 
-  <p className="text-gray-900 font-semibold text-xl bg-gradient-to-r from-blue-50 to-blue-100 p-5 rounded-xl shadow-lg border-l-4 border-blue-700 italic">
-    “Every journey we manage is crafted to deliver unmatched safety, luxurious ease,
-    and true VIP treatment.”
-  </p>
+            <p className="text-gray-900 font-semibold text-xl bg-gradient-to-r from-blue-50 to-blue-100 p-5 rounded-xl shadow-lg border-l-4 border-blue-700 italic">
+              “Every journey we manage is crafted to deliver unmatched safety, luxurious ease,
+              and true VIP treatment.”
+            </p>
 
-</div>
-
+          </div>
         </div>
       </section>
+
 
       {/* =======================
           2. WHY CHOOSE CELEBRITY SERVICE
@@ -141,6 +169,7 @@ export default function About() {
         </div>
       </section>
 
+
       {/* =======================
            3. OUR COMMITMENT
       ========================== */}
@@ -150,8 +179,9 @@ export default function About() {
         </h2>
 
         <p className="mt-6 text-gray-700 text-lg leading-relaxed text-center max-w-4xl mx-auto">
-          At Anand Celebrity Service, we stand for safety, privacy, and comfort. Our team handles every detail —
-          from vehicles and hotel bookings to high-priority security support — ensuring a flawless VIP experience.
+          At Anand Celebrity Service, we stand for safety, privacy, and comfort. 
+          Our team handles every detail — from vehicles and hotel bookings 
+          to high-priority security support — ensuring a flawless VIP experience.
         </p>
 
         <p className="mt-4 text-gray-700 text-lg leading-relaxed text-center max-w-4xl mx-auto">
@@ -199,6 +229,7 @@ export default function About() {
 
         </div>
       </section>
+
     </div>
   );
 }

@@ -87,8 +87,8 @@ export default function Contact() {
               <button
                 className="
                   w-full py-3 mt-4 rounded-xl text-white font-semibold text-lg
-                  bg-gradient-to-r from-orange-500 to-orange-700 
-                  hover:from-orange-600 hover:to-orange-800 
+                  bg-gradient-to-r from-blue-500 to-orange-700 
+                  hover:from-blue-700 hover:to-orange-800 
                   shadow-lg hover:shadow-2xl transform hover:scale-[1.03]
                   transition-all
                 "
