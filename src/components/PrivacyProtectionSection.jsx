@@ -4,24 +4,24 @@ import { Shield, UserX, KeyRound, EyeOff } from "lucide-react";
 export default function PrivacyProtectionSection() {
   const points = [
     {
-      icon: <EyeOff className="w-10 h-10 text-blue-600" />,
+      icon: <EyeOff className="w-8 h-8" />,
       title: "No Public Exposure",
-      desc: "We ensure complete anonymity with discreet pickup and drop locations chosen as per VIP preference.",
+      desc: "Anonymous pickup points and silent routing for complete confidentiality.",
     },
     {
-      icon: <UserX className="w-10 h-10 text-blue-600" />,
+      icon: <UserX className="w-8 h-8" />,
       title: "Zero Social Disclosure",
-      desc: "Our team strictly avoids social media mentions, photos, or location tracking during VIP movement.",
+      desc: "No photos, no tags, no mentions — a strict non-disclosure movement.",
     },
     {
-      icon: <KeyRound className="w-10 h-10 text-blue-600" />,
+      icon: <KeyRound className="w-8 h-8" />,
       title: "Encrypted Coordination",
-      desc: "All communication is handled through secure, encrypted channels for maximum confidentiality.",
+      desc: "Every communication is secured with encrypted & private channels.",
     },
     {
-      icon: <Shield className="w-10 h-10 text-blue-600" />,
+      icon: <Shield className="w-8 h-8" />,
       title: "High Confidential Handling",
-      desc: "Client identity and travel details are confidential and shared strictly on a need-to-know basis.",
+      desc: "Identity, stay details & travel plans are shared strictly on a need-to-know basis.",
     },
   ];
 
@@ -46,10 +46,10 @@ export default function PrivacyProtectionSection() {
           transition={{ duration: 0.8 }}
           className="text-center text-gray-600 mt-3 max-w-2xl mx-auto"
         >
-          Privacy is not just a feature — it's our foundation. Every movement is protected by strict confidentiality protocols.
+          Privacy is our core promise — protected with elite-level security protocols.
         </motion.p>
 
-        {/* Card Grid */}
+        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-14">
           {points.map((item, idx) => (
             <motion.div
@@ -57,11 +57,39 @@ export default function PrivacyProtectionSection() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="p-6 bg-white border border-blue-100 rounded-2xl shadow-lg hover:shadow-xl transition"
+              className="
+                p-8 bg-white border border-gray-200 rounded-2xl 
+                shadow-[0_4px_15px_rgba(0,0,0,0.08)]
+                hover:shadow-[0_8px_25px_rgba(0,0,0,0.12)]
+                hover:-translate-y-2 transition-all duration-300
+              "
             >
-              <div className="flex justify-center mb-4">{item.icon}</div>
-              <h3 className="text-lg font-bold text-blue-900 text-center">{item.title}</h3>
-              <p className="text-gray-600 text-sm text-center mt-2">{item.desc}</p>
+
+              {/* Icon Container – Matte Black + Gold */}
+              <div
+                className="
+                  w-16 h-16 mx-auto mb-6 rounded-xl
+                  bg-[#0e0e12]
+                  flex items-center justify-center
+                  border border-[#d4af37]
+                  shadow-[inset_0_0_10px_rgba(212,175,55,0.25)]
+                  text-[#d4af37]
+                  hover:scale-110 hover:shadow-[inset_0_0_15px_rgba(212,175,55,0.35)]
+                  transition-all duration-300
+                "
+              >
+                {item.icon}
+              </div>
+
+              {/* Title */}
+              <h3 className="text-lg font-bold text-blue-900 text-center">
+                {item.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-600 text-sm text-center mt-2 leading-relaxed">
+                {item.desc}
+              </p>
             </motion.div>
           ))}
         </div>

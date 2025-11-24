@@ -5,3 +5,28 @@
 .navy-blue{
     background-color: #1e3a5f;
 }
+.icon-pulse {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.icon-shine {
+  position: relative;
+  overflow: hidden;
+}
+.icon-shine::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  animation: shine 3s infinite;
+}
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}

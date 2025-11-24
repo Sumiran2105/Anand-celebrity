@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+
 import {
   FiShield,
   FiTruck,
@@ -14,104 +16,205 @@ import {
 
 import ServiceModal from "../components/ServiceModal";
 
+// -----------------------------------------------
+// ANIMATION VARIANTS (STAGGERED ICON ENTRY)
+// -----------------------------------------------
+const iconVariant = {
+  hidden: { opacity: 0, scale: 0.4, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
+
+// -----------------------------------------------
+// ICON BOX COMPONENT (Pulse + Shine)
+// -----------------------------------------------
+function IconBox({ children, colorClass }) {
+  return (
+    <div
+      className={`
+        w-16 h-16 rounded-2xl flex items-center justify-center
+        bg-gradient-to-br ${colorClass}
+        shadow-lg border border-white/50
+        transition-all duration-300
+        hover:scale-110 hover:shadow-2xl
+        icon-pulse icon-shine
+      `}
+    >
+      {children}
+    </div>
+  );
+}
+
 export default function Services() {
   const [selectedService, setSelectedService] = useState(null);
 
-  // ================================
-  // SERVICES LIST
-  // ================================
+  // -----------------------------------------------
+  // PREMIUM COLOR PALETTES FOR ICONS
+  // -----------------------------------------------
+  const iconStyles = [
+    "from-blue-100 to-blue-300 text-blue-700 shadow-blue-300",
+    "from-purple-100 to-purple-300 text-purple-700 shadow-purple-300",
+    "from-amber-100 to-amber-300 text-amber-700 shadow-amber-300",
+    "from-emerald-100 to-emerald-300 text-emerald-700 shadow-emerald-300",
+    "from-red-100 to-red-300 text-red-700 shadow-red-300",
+    "from-indigo-100 to-indigo-300 text-indigo-700 shadow-indigo-300",
+    "from-rose-100 to-rose-300 text-rose-700 shadow-rose-300",
+    "from-cyan-100 to-cyan-300 text-cyan-700 shadow-cyan-300",
+  ];
+
+  // -----------------------------------------------
+  // SERVICE CARDS (FULL UPDATED WITH FEATURES)
+  // -----------------------------------------------
   const services = [
     {
       icon: <FiTruck size={30} />,
       title: "Luxury Cars & Chauffeurs",
       desc: "Premium sedans, SUVs, and luxury vans.",
       fullDesc:
-        "We offer premium luxury cars including Mercedes, BMW, Audi, Range Rover, and Vellfire with experienced chauffeurs trained in VIP movement, privacy handling, secure routing, and high-standard hospitality etiquette.",
+        "We provide premium luxury vehicles such as Mercedes, BMW, Audi, Range Rover, and Vellfire with trained VIP chauffeurs who maintain full discretion and protocol discipline.",
+      features: [
+        "Mercedes, BMW, Audi & Range Rover fleet",
+        "Protocol-trained chauffeurs",
+        "Discreet pickup & drop handling",
+        "Shock-free smooth driving style",
+        "Real-time backend movement monitoring",
+      ],
     },
     {
       icon: <FiShield size={30} />,
       title: "Elite Security Personnel",
-      desc: "Gunmen, bouncers, and protection officers.",
+      desc: "Gunmen, bouncers, and PSOs.",
       fullDesc:
-        "Our elite security division consists of licensed gunmen, bouncers, and seasoned close-protection officers trained in crowd management, event security, route sanitization, and high-profile client protection protocols.",
+        "Our close-protection officers include licensed gunmen, bouncers, PSOs, and high-level security experts trained for VIP escorting and crisis handling.",
+      features: [
+        "Licensed gunmen & elite bouncers",
+        "Threat-level risk assessment",
+        "VIP escorting & crowd control",
+        "Media-zone protection",
+        "24/7 protective intelligence support",
+      ],
     },
     {
       icon: <FiHome size={30} />,
       title: "Private Hotel Arrangements",
       desc: "VIP rooms with total discretion.",
       fullDesc:
-        "We arrange premium hotel stays with discreet check-ins, secure floors, pre-screened staff, dedicated concierge, and carefully selected rooms for maximum privacy and comfort during celebrity movement.",
+        "We arrange private entry, secure floors, pre-screened staff, and high confidentiality check-in for celebrity clients.",
+      features: [
+        "Silent check-ins without registration counters",
+        "Dedicated floor access for increased privacy",
+        "Pre-screened housekeeping team",
+        "VIP concierge & secure passage",
+      ],
     },
     {
       icon: <FiUsers size={30} />,
       title: "Backend Coordination",
-      desc: "Travel + event movement management.",
+      desc: "Movement + event logistics.",
       fullDesc:
-        "Our coordination team manages all movement logistics including vehicle timing, hotel liaison, security placement, crowd planning, alternate routing, and emergency repositioning.",
+        "Our backstage coordination includes vehicle timing, route clearance, stage/entry planning, and emergency handling.",
+      features: [
+        "Chauffeur & security sync-up",
+        "Event backstage control",
+        "Live route monitoring",
+        "Emergency re-routing",
+      ],
     },
     {
       icon: <FiMap size={30} />,
       title: "Pan-India VIP Movement",
-      desc: "Statewide secure travel plans.",
+      desc: "Nationwide travel management.",
       fullDesc:
-        "Whether it's back-to-back shows, media appearances, airport transfers, or intercity movement, our pan-India network ensures seamless, secure VIP travel anywhere in the country.",
+        "Seamless statewide and interstate movement with optimized, risk-free routing and scheduling.",
+      features: [
+        "Airport-Floor to venue-Floor movements",
+        "Statewide protocol-based transfers",
+        "Secure route blueprinting",
+        "Priority traffic management",
+      ],
     },
     {
       icon: <FiStar size={30} />,
-      title: "Red-Carpet / Event Assistance",
-      desc: "Backstage & crowd coordination.",
+      title: "Red-Carpet Assistance",
+      desc: "Media & backstage control.",
       fullDesc:
-        "From red-carpet escorting to backstage management, media handling, lighting movement, and crowd spacing — we ensure smooth appearances without interruption.",
+        "We ensure a smooth red-carpet appearance with media spacing, crowd control, and camera pathway management.",
+      features: [
+        "Camera & media lane formation",
+        "Zero-crowd contact strategy",
+        "On-stage & backstage escorting",
+        "Fan/crowd pressure management",
+      ],
     },
     {
       icon: <FiPhoneCall size={30} />,
       title: "24/7 Dedicated Support",
-      desc: "Instant priority assistance.",
+      desc: "Instant priority help.",
       fullDesc:
-        "Our 24/7 celebrity hotline ensures you get immediate assistance for urgent requests, emergencies, last-minute movement changes, and unplanned routing support.",
+        "A priority hotline for celebrity managers ensuring immediate support for all urgent situations.",
+      features: [
+        "Instant issue resolution",
+        "Night-shift VIP handlers",
+        "Emergency movement planning",
+        "Last-minute booking support",
+      ],
     },
     {
       icon: <FiGlobe size={30} />,
       title: "International Coordination",
-      desc: "Worldwide VIP movement.",
+      desc: "Worldwide movement.",
       fullDesc:
-        "We provide premium assistance for overseas travel including airport pickup, immigration guidance, VIP hotel booking, onboard security, and global movement support.",
+        "Global VIP support including airport arrivals, immigration handling, hotel booking, and international chauffeur/security.",
+      features: [
+        "Immigration arrival assistance",
+        "VIP hotel & travel bookings",
+        "International chauffeur support",
+        "Worldwide movement coordination",
+      ],
     },
   ];
 
-  // ================================
+  // -----------------------------------------------
   // PROCESS STEPS
-  // ================================
+  // -----------------------------------------------
   const process = [
     {
       icon: <FiEye size={28} />,
       title: "Confidential Profile Assessment",
-      desc: "We study your movement purpose, privacy sensitivity, and required protocol levels to plan a tailored VIP strategy.",
+      desc: "We understand your requirement & privacy sensitivity.",
     },
     {
       icon: <FiShield size={28} />,
       title: "Risk & Requirement Analysis",
-      desc: "Our protection team identifies media zones, public hotspots, alternate routes, and risk points.",
+      desc: "Hotspots & alternate routes are planned.",
     },
     {
       icon: <FiUsers size={28} />,
       title: "Specialized Team Allocation",
-      desc: "We assign chauffeurs, PSOs, bouncers, handlers, and coordinators based on your requirement.",
+      desc: "Chauffeurs, PSOs, bouncers, handlers selected.",
     },
     {
       icon: <FiMap size={28} />,
       title: "Multi-Route Blueprinting",
-      desc: "Primary, secondary, diversion, and emergency extraction routes are prepared and briefed.",
+      desc: "Primary, backup & emergency routes planned.",
     },
     {
       icon: <FiCheckCircle size={28} />,
       title: "On-Ground Execution",
-      desc: "Coordination between cars, handlers, and security ensures precision movement without interruption.",
+      desc: "Smooth, secure, and coordinated VIP movement.",
     },
     {
       icon: <FiPhoneCall size={28} />,
       title: "End-of-Day Review",
-      desc: "A complete movement summary and next-day plan are shared with PA/manager.",
+      desc: "Daily summary + next-day plan update.",
     },
   ];
 
@@ -119,81 +222,79 @@ export default function Services() {
     <section className="bg-white py-20 md:py-24">
       <div className="container mx-auto px-4">
 
-        {/* ============================ */}
-        {/* SECTION TITLE */}
-        {/* ============================ */}
+        {/* TITLE */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-blue-900">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900">
             Our Premium Services
           </h2>
           <p className="mt-3 text-gray-600 max-w-2xl mx-auto text-lg">
-            Trusted VIP support specially designed for celebrities and high-profile clients.
+            Trusted VIP support crafted for celebrities & high-profile clients.
           </p>
         </div>
 
-        {/* ============================ */}
         {/* SERVICES GRID */}
-        {/* ============================ */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
               onClick={() => setSelectedService(service)}
-              className="
-                p-7 
-                rounded-2xl
-                border 
-                border-gray-200
-                bg-white
-                shadow-md 
-                hover:shadow-xl
-                transition-all 
-                duration-300
-                hover:-translate-y-2
-                cursor-pointer
-              "
+              className="p-7 rounded-2xl bg-white border border-gray-200 shadow-md
+              hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
             >
-              <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
-                {service.icon}
-              </div>
+              <motion.div
+                custom={index}
+                variants={iconVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <IconBox colorClass={iconStyles[index]}>
+                  {service.icon}
+                </IconBox>
+              </motion.div>
 
               <h3 className="text-xl font-bold text-blue-900 mt-5">
                 {service.title}
               </h3>
-
-              <p className="text-gray-600 mt-3 text-sm">
-                {service.desc}
-              </p>
-
-              <div className="mt-5 h-[3px] w-0 group-hover:w-full bg-orange-400 transition-all duration-700"></div>
+              <p className="text-gray-600 mt-3 text-sm">{service.desc}</p>
             </div>
           ))}
         </div>
 
-        {/* ======================================= */}
-        {/*      NEW PREMIUM PROCESS SECTION        */}
-        {/* ======================================= */}
-
+        {/* PROCESS SECTION */}
         <div className="mt-24">
           <h2 className="text-3xl md:text-4xl font-extrabold text-center text-blue-900">
             Our Premium Process
           </h2>
 
           <p className="text-center text-gray-600 max-w-2xl mx-auto mt-3 text-lg">
-            Ultra-secure, confidential, and precision-driven workflow for VIP movement.
+            Ultra-secure, confidential & precision-driven workflow for VIP movement.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
-
             {process.map((step, index) => (
               <div
                 key={index}
-                className="p-8 border bg-white rounded-2xl shadow-md hover:shadow-xl 
-                transition-all duration-300 hover:-translate-y-2"
+                className="p-8 bg-white border rounded-2xl shadow-md 
+                hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center">
-                  {step.icon}
-                </div>
+                <motion.div
+                  custom={index}
+                  variants={iconVariant}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  <IconBox
+                    colorClass="
+                      from-yellow-100 to-yellow-300
+                      text-yellow-700 shadow-yellow-400
+                      border-yellow-200
+                    "
+                  >
+                    {step.icon}
+                  </IconBox>
+                </motion.div>
 
                 <h3 className="text-xl font-bold text-blue-900 mt-4">
                   {step.title}
@@ -210,7 +311,6 @@ export default function Services() {
                 </div>
               </div>
             ))}
-
           </div>
         </div>
 
