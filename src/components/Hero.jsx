@@ -27,7 +27,7 @@ export default function Hero() {
               transition={{ duration: 0.7 }}
               className="text-lg md:text-xl text-gray-600 max-w-xl"
             >
-              Premium luxury cars, trained chauffeurs, elite security teams and private hotel arrangements — 
+              Premium luxury cars, trained chauffeurs, elite security teams and private hotel arrangements
               all coordinated with discretion for celebrity and VIP travel.
             </motion.p>
 

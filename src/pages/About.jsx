@@ -21,7 +21,7 @@ export default function About() {
 
     <p className="mt-6 text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
       Experience flawless coordination, protected travel, and discreet luxury movement for
-      India’s most respected personalities — delivered with unmatched professionalism.
+      India’s most respected personalities,delivered with unmatched professionalism.
     </p>
 
     <p className="mt-5 text-blue-200 max-w-2xl mx-auto text-lg leading-relaxed">
@@ -59,31 +59,30 @@ export default function About() {
 
             <p className="text-[1.15rem] text-gray-800 leading-relaxed bg-white/80 p-4 rounded-lg border-l-4 border-blue-700 shadow-sm">
               Anand Celebrity Service stands as India’s most trusted and distinguished
-              luxury movement brand — built exclusively for celebrities, influencers,
+              luxury movement brand,built exclusively for celebrities, influencers,
               public personalities, and high-profile professionals who expect nothing
               less than <span className="font-semibold text-blue-700">precision, privacy, and five-star comfort</span>.
             </p>
 
             <p className="text-[1.15rem] text-gray-700 leading-relaxed bg-white/70 p-4 rounded-lg border-l-4 border-orange-500 shadow-sm">
               From film shoots to nationwide tours and spiritual retreats, every movement is
-              handled with <span className="font-semibold text-orange-600">elite-level security, seamless coordination,
+              handled with <span className="font-semibold text-orange-600">elite level security, seamless coordination,
               and complete confidentiality</span>.
             </p>
 
             <p className="text-[1.15rem] text-gray-700 leading-relaxed bg-white/70 p-4 rounded-lg shadow-sm">
-              Each assignment is supported by a trained backend network — expert chauffeurs,
-              luxury fleet partners, operations managers, and premium stay tie-ups —
+              Each assignment is supported by a trained backend network expert chauffeurs,
+              luxury fleet partners, operations managers, and premium stay tie ups
               ensuring unmatched professionalism.
             </p>
 
             <p className="text-[1.15rem] text-gray-700 leading-relaxed bg-white/70 p-4 rounded-lg shadow-sm">
-              Whether it's discreet event movement or multi-city VIP routes, we operate with one
+              Whether it's discreet event movement or multi city VIP routes, we operate with one
               principle: <span className="font-semibold text-blue-700">your comfort and privacy come first</span>.
             </p>
 
             <p className="text-gray-900 font-semibold text-xl bg-gradient-to-r from-blue-50 to-blue-100 p-5 rounded-xl shadow-lg border-l-4 border-blue-700 italic">
-              “Every journey we manage is crafted to deliver unmatched safety, luxurious ease,
-              and true VIP treatment.”
+              "This isn’t travel. It’s controlled movement with elite security and luxury at the highest level."
             </p>
 
           </div>

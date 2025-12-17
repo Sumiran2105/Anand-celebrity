@@ -66,6 +66,9 @@ const Footer = () => {
 
               <p className="text-yellow-200 text-sm italic">
                 "Seamless • Secure • Private Movement"
+              </p> 
+              <p className="text-white text-sm">
+                Anand Celebrity Service provides secure, discreet travel support for celebrities and high-profile professionals, managing luxury mobility, personal security, and coordination with precision,so clients move effortlessly and confidently.
               </p>
             </div>
 
